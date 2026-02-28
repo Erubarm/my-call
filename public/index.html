@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALL</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="waiting">
+  <div class="big-logo">CALL</div>
+  <div class="sub">Без регистрации · Мгновенное подключение</div>
+  <div class="url-block">
+    <div class="url-label">Поделитесь ссылкой с собеседником</div>
+    <div class="url-copy" id="url-copy" title="Нажмите чтобы скопировать">…</div>
+  </div>
+  <button class="join-btn" id="join-btn">Войти в комнату</button>
+  <div class="status-line" id="status-line">Нажмите чтобы подключиться</div>
+</div>
+
+<header>
+  <div class="logo">CALL</div>
+  <div class="room-id">ROOM: <span id="room-label"></span></div>
+  <div class="peer-count"><span class="dot"></span><span id="peer-count">0 участников</span></div>
+</header>
+
+<div id="video-grid"></div>
+
+<div id="controls">
+  <button class="ctrl-btn" id="btn-mic" title="Микрофон">🎤</button>
+  <button class="ctrl-btn end-call" id="btn-leave" title="Покинуть">📵</button>
+  <button class="ctrl-btn" id="btn-cam" title="Камера">📷</button>
+  <button class="ctrl-btn" id="btn-screen" title="Демонстрация экрана">🖥️</button>
+</div>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
