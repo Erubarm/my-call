@@ -1,6 +1,5 @@
-version: "3"
-agent:
-  authtoken: 3AIOnWWHJQ49t0BdpNKP03NB7hk_6Q4zS9NK9NPf7LGAD3oGR
+version: "2"
+authtoken: 3AIOnWWHJQ49t0BdpNKP03NB7hk_6Q4zS9NK9NPf7LGAD3oGR
 
 tunnels:
   call:
