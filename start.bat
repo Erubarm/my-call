@@ -9,11 +9,9 @@ echo  [1/2] Запускаем Node.js сервер...
 start "CALL Server" cmd /k "cd /d %~dp0 && npm start"
 timeout /t 2 /nobreak >nul
 
-echo  [2/2] Запускаем ngrok туннель...
-start "CALL ngrok" cmd /k "cd /d %~dp0 && ngrok start --config ngrok.yml call"
+echo  [2/2] Запускаем Cloudflare Tunnel...
+echo  Ссылку смотри в окне "CALL Cloudflare" (строка "trycloudflare.com")
+start "CALL Cloudflare" cmd /k "cloudflared tunnel --url http://localhost:9000"
 
-echo.
-echo  Готово! Открывай:
-echo  https://unformalised-caterina-cloakless.ngrok-free.dev
 echo.
 pause

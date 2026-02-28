@@ -3,11 +3,18 @@
 // =============================================
 
 const PEER_CONFIG = {
-  host: 'unformalised-caterina-cloakless.ngrok-free.dev',
-  port: 443,
+  host: location.hostname,
+  port: location.port ? parseInt(location.port) : (location.protocol === 'https:' ? 443 : 80),
   path: '/peerjs',
-  secure: true,
+  secure: location.protocol === 'https:',
   debug: 0,
+  config: {
+    iceServers: [
+      { urls: 'stun:stun.cloudflare.com:3478' },
+      { urls: 'stun:openrelay.metered.ca:80' },
+      { urls: 'stun:openrelay.metered.ca:443' },
+    ],
+  },
 };
 
 // =============================================

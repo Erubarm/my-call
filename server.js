@@ -6,12 +6,6 @@ const http       = require('http');
 const app  = express();
 const PORT = process.env.PORT || 9000;
 
-// ngrok требует этот заголовок
-app.use((req, res, next) => {
-  res.setHeader('ngrok-skip-browser-warning', 'true');
-  next();
-});
-
 // Статика из /public
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -35,7 +29,6 @@ peerServer.on('disconnect', (client) => {
 server.listen(PORT, () => {
   console.log(`\n✅  CALL сервер запущен`);
   console.log(`🏠  Локально:  http://localhost:${PORT}`);
-  console.log(`🌐  Публично:  https://unformalised-caterina-cloakless.ngrok-free.dev`);
   console.log(`📡  PeerJS:    http://localhost:${PORT}/peerjs`);
-  console.log(`\n⚠️  Запусти ngrok в отдельном окне: ngrok start --config ngrok.yml call\n`);
+  console.log(`\n⚠️  Запусти Cloudflare Tunnel в отдельном окне: cloudflared tunnel run call\n`);
 });
